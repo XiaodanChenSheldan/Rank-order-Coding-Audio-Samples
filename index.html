@@ -39,7 +39,31 @@
   </style>
 </head>
 <body>
-  <h1>Audio Samples (looped 10 times for easier comparison)</h1>
+  <h1>Violation Section Media</h1>
+  <div id="content"></div>
+  <!-- Add figures -->
+  <h2>Waveform Figures</h2>
+  <div>
+    <img src="violation_media/waveform_combined_segmented.png" alt="Waveform" style="max-width: 100%; margin-bottom: 20px;" />
+  </div>
+
+  <!-- Add standalone audio -->
+  <h2>Corresponding Original Audio</h2>
+  <p>Original:</p>
+  <audio controls>
+    <source src="violation_media/ground_true_audio.wav" type="audio/wav" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <h2>Corresponding Audio with Violation</h2>
+  <p>Violation:</p>
+  <audio controls>
+    <source src="violation_media/violation_audio.wav" type="audio/wav" />
+    Your browser does not support the audio element.
+  </audio>
+
+  
+  <h1>Swapped Audio Samples (looped 10 times for easier comparison)</h1>
   <div id="content"></div>
 
   <script>
