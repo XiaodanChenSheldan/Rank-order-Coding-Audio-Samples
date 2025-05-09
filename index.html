@@ -67,25 +67,28 @@
 <body>
   <h1>Violation Section Media</h1>
 
-  <!-- Side-by-side layout -->
-  <div class="media-comparison">
-    <div class="waveform-section">
-      <h3>Waveform Figures</h3>
-      <img src="violation_media/waveform_combined_segmented.png" alt="Waveform" />
+  <div style="display: flex; gap: 40px; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap;">
+    <!-- Waveform Image -->
+    <div style="flex: 1 1 400px;">
+      <img src="violation_media/waveform_combined_segmented.png" alt="Waveform" style="width: 100%; height: auto; border: 1px solid #ccc;" />
     </div>
-
-    <div class="audio-section">
-      <h3>Corresponding Original Audio</h3>
-      <audio controls>
-        <source src="violation_media/ground_true_audio.wav" type="audio/wav" />
-        Your browser does not support the audio element.
-      </audio>
-
-      <h3>Corresponding Audio with Violation</h3>
-      <audio controls>
-        <source src="violation_media/violation_audio.wav" type="audio/wav" />
-        Your browser does not support the audio element.
-      </audio>
+  
+    <!-- Audio Section -->
+    <div style="flex: 1 1 400px; display: flex; flex-direction: column; gap: 30px;">
+      <div>
+        <h3>Corresponding Original Audio</h3>
+        <audio controls>
+          <source src="violation_media/ground_true_audio.wav" type="audio/wav" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div>
+        <h3>Corresponding Audio with Violation</h3>
+        <audio controls>
+          <source src="violation_media/violation_audio.wav" type="audio/wav" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
     </div>
   </div>
 
