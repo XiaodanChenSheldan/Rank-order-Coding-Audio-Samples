@@ -34,11 +34,11 @@
 
   <section aria-label="Index Level Invariance Only (Swapped Nb: 2)">
     <h2>Index Level Invariance Only (Swapped Nb: 2)</h2>
-    <ul id="audioList"></ul>
+    <ul id="audioList2"></ul>
   </section>
 
   <script>
-    // Define your audio files here
+    // Define your audio files here for Swapped Nb: 2
     const index_level_invariance_only_2 = [
       { name: "ori_4.wav", path: "samples/index_level_invariance_only_2/ori_4.wav" },
       { name: "swapped_4.wav", path: "samples/index_level_invariance_only_2/swapped_4.wav" },
@@ -50,15 +50,15 @@
       { name: "swapped_634.wav", path: "samples/index_level_invariance_only_2/swapped_634.wav" }
     ];
 
-    const audioList = document.getElementById('audioList');
+    const audioList2 = document.getElementById('audioList2');
 
-    // Generate HTML for each audio file
-    samples.forEach(index_level_invariance_only_2 => {
-      audioList.innerHTML += `
+    // Generate HTML for each audio file for Swapped Nb: 2
+    index_level_invariance_only_2.forEach(audio => {
+      audioList2.innerHTML += `
         <li>
-          <p>${sample.name}</p>
+          <p>${audio.name}</p>
           <audio controls>
-            <source src="${sample.path}" type="audio/wav">
+            <source src="${audio.path}" type="audio/wav">
             <p class="error">Your browser does not support the audio element.</p>
           </audio>
         </li>
@@ -66,34 +66,33 @@
     });
   </script>
 
-
   <section aria-label="Index Level Invariance Only (Swapped Nb: 3)">
     <h2>Index Level Invariance Only (Swapped Nb: 3)</h2>
-    <ul id="audioList"></ul>
+    <ul id="audioList3"></ul>
   </section>
 
   <script>
-    // Define your audio files here
+    // Define your audio files here for Swapped Nb: 3
     const index_level_invariance_only_3 = [
       { name: "ori_73.wav", path: "samples/index_level_invariance_only_3/ori_73.wav" },
       { name: "swapped_73.wav", path: "samples/index_level_invariance_only_3/swapped_73.wav" },
       { name: "ori_101.wav", path: "samples/index_level_invariance_only_3/ori_101.wav" },
       { name: "swapped_101.wav", path: "samples/index_level_invariance_only_3/swapped_101.wav" },
       { name: "ori_250.wav", path: "samples/index_level_invariance_only_3/ori_250.wav" },
-      { name: "swapped_250.wav", path: "samples/index_level_invariance_only_2/swapped_250.wav" },
+      { name: "swapped_250.wav", path: "samples/index_level_invariance_only_3/swapped_250.wav" },
       { name: "ori_618.wav", path: "samples/index_level_invariance_only_3/ori_618.wav" },
       { name: "swapped_618.wav", path: "samples/index_level_invariance_only_3/swapped_618634.wav" }
     ];
 
-    const audioList = document.getElementById('audioList');
+    const audioList3 = document.getElementById('audioList3');
 
-    // Generate HTML for each audio file
-    samples.forEach(index_level_invariance_only_3 => {
-      audioList.innerHTML += `
+    // Generate HTML for each audio file for Swapped Nb: 3
+    index_level_invariance_only_3.forEach(audio => {
+      audioList3.innerHTML += `
         <li>
-          <p>${sample.name}</p>
+          <p>${audio.name}</p>
           <audio controls>
-            <source src="${sample.path}" type="audio/wav">
+            <source src="${audio.path}" type="audio/wav">
             <p class="error">Your browser does not support the audio element.</p>
           </audio>
         </li>
