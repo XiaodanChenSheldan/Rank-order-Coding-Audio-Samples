@@ -36,40 +36,67 @@
       font-weight: bold;
       margin-bottom: 5px;
     }
+
+    /* NEW STYLES FOR SIDE-BY-SIDE MEDIA BLOCK */
+    .media-comparison {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+      align-items: flex-start;
+    }
+
+    .waveform-section {
+      flex: 1;
+    }
+
+    .waveform-section img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .audio-section {
+      flex: 1;
+    }
+
+    .audio-section h3 {
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
   <h1>Violation Section Media</h1>
-  <div id="content"></div>
-  <!-- Add figures -->
-  <h2>Waveform Figures</h2>
-  <div>
-    <img src="violation_media/waveform_combined_segmented.png" alt="Waveform" style="max-width: 100%; margin-bottom: 20px;" />
+
+  <!-- Side-by-side layout -->
+  <h2>Visual and Audio Comparison</h2>
+  <div class="media-comparison">
+    <div class="waveform-section">
+      <h3>Waveform Figures</h3>
+      <img src="violation_media/waveform_combined_segmented.png" alt="Waveform" />
+    </div>
+
+    <div class="audio-section">
+      <h3>Corresponding Original Audio</h3>
+      <audio controls>
+        <source src="violation_media/ground_true_audio.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <h3>Corresponding Audio with Violation</h3>
+      <audio controls>
+        <source src="violation_media/violation_audio.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
   </div>
 
-  <!-- Add standalone audio -->
-  <h2>Corresponding Original Audio</h2>
-  <p>Original:</p>
-  <audio controls>
-    <source src="violation_media/ground_true_audio.wav" type="audio/wav" />
-    Your browser does not support the audio element.
-  </audio>
-
-  <h2>Corresponding Audio with Violation</h2>
-  <p>Violation:</p>
-  <audio controls>
-    <source src="violation_media/violation_audio.wav" type="audio/wav" />
-    Your browser does not support the audio element.
-  </audio>
-
-  
   <h1>Swapped Audio Samples (looped 10 times for easier comparison)</h1>
-  <div id="swapped-content"></div> <!-- Changed id to avoid conflict -->
+  <div id="swapped-content"></div>
 
   <script>
     // Define dataset
     const swappedNumbers = [2, 3, 4, 5, 6];
-    
+
     const datasetInfo = {
       "Index Level Invariance Only": {
         prefix: "index_level_invariance_only",
@@ -92,9 +119,9 @@
         }
       }
     };
-    
+
     const datasets = {};
-    
+
     for (const [label, { prefix, ids }] of Object.entries(datasetInfo)) {
       for (const nb of swappedNumbers) {
         const title = `${label} (Swapped Nb: ${nb})`;
@@ -105,7 +132,6 @@
       }
     }
 
-    // Handle swapped audio content
     const swappedContent = document.getElementById("swapped-content");
 
     for (const [sectionTitle, { folder, ids }] of Object.entries(datasets)) {
