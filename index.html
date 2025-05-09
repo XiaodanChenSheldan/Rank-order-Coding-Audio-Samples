@@ -64,7 +64,7 @@
 
   
   <h1>Swapped Audio Samples (looped 10 times for easier comparison)</h1>
-  <div id="swapped-content"></div>
+  <div id="swapped-content"></div> <!-- Changed id to avoid conflict -->
 
   <script>
     // Define dataset
@@ -105,8 +105,8 @@
       }
     }
 
-
-    const content = document.getElementById("content");
+    // Handle swapped audio content
+    const swappedContent = document.getElementById("swapped-content");
 
     for (const [sectionTitle, { folder, ids }] of Object.entries(datasets)) {
       const section = document.createElement("section");
@@ -144,7 +144,7 @@
 
       section.appendChild(heading);
       section.appendChild(list);
-      content.appendChild(section);
+      swappedContent.appendChild(section);
     }
   </script>
 </body>
