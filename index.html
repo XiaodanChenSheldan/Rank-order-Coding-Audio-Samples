@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rank-Order Coding Audio Samples</title>
+  <meta name="Section name" content="Robustness of Rank-Based Representations to Index-Level Perturbations" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -43,50 +44,43 @@
 
   <script>
     // Define dataset
-    const datasets = {
-      "Index Level Invariance Only (Swapped Nb: 2)": {
-        folder: "samples/index_level_invariance_only_2",
-        ids: [209, 634, 857]
+    const swappedNumbers = [2, 3, 4, 5, 6];
+    
+    const datasetInfo = {
+      "Index Level Invariance Only": {
+        prefix: "index_level_invariance_only",
+        ids: {
+          2: [209, 634, 857],
+          3: [73, 250, 618],
+          4: [357, 639, 776],
+          5: [104, 323, 793],
+          6: [41, 423, 770]
+        }
       },
-
-      "Rank Level Invariance (Swapped Nb: 2)": {
-        folder: "samples/rank_level_invariance_2",
-        ids: [41, 423, 631]
-      },
-      "Index Level Invariance Only (Swapped Nb: 3)": {
-        folder: "samples/index_level_invariance_only_3",
-        ids: [73,  250, 618]
-      },
-      "Rank Level Invariance (Swapped Nb: 3)": {
-        folder: "samples/rank_level_invariance_3",
-        ids: [84, 357, 859]
-      },
-      "Index Level Invariance Only (Swapped Nb: 4)": {
-        folder: "samples/index_level_invariance_only_4",
-        ids: [357, 639, 776]
-      },
-      "Rank Level Invariance (Swapped Nb: 4)": {
-        folder: "samples/rank_level_invariance_4",
-        ids: [73, 267, 356]
-      },
-      "Index Level Invariance Only (Swapped Nb: 5)": {
-        folder: "samples/index_level_invariance_only_5",
-        ids: [104, 323, 793]
-      },
-      "Rank Level Invariance (Swapped Nb: 5)": {
-        folder: "samples/rank_level_invariance_5",
-        ids: [73, 267, 356]
-      },
-      "Index Level Invariance Only (Swapped Nb: 6)": {
-        folder: "samples/index_level_invariance_only_6",
-        ids: [41, 423, 770]
-      },
-      "Rank Level Invariance (Swapped Nb: 6)": {
-        folder: "samples/rank_level_invariance_6",
-        ids: [73, 267, 356]
+      "Rank Level Invariance": {
+        prefix: "rank_level_invariance",
+        ids: {
+          2: [41, 423, 631],
+          3: [84, 357, 859],
+          4: [73, 267, 356],
+          5: [73, 267, 356],
+          6: [73, 267, 356]
+        }
       }
-      // Add more sections here if needed
     };
+    
+    const datasets = {};
+    
+    for (const [label, { prefix, ids }] of Object.entries(datasetInfo)) {
+      for (const nb of swappedNumbers) {
+        const title = `${label} (Swapped Nb: ${nb})`;
+        datasets[title] = {
+          folder: `samples/${prefix}_${nb}`,
+          ids: ids[nb]
+        };
+      }
+    }
+
 
     const content = document.getElementById("content");
 
