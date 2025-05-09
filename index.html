@@ -1,28 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rank-Order Coding Audio Samples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
 </head>
 <body>
-  <h1>Audio Samples</h1>
+  <h1>Audio Samples (pre-looped 10 times for easier comparison)</h1>
 
-  <h2>Index Level Invariance Only (Swapped Nb: 2; Sample #)</h2>
-  <ul>
-    <li>
-      <p>ori_4.wav</p>
-      <audio controls>
-        <source src="samples/index_level_invariance_only_2/ori_4.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </li>
-    <li>
-      <p>swapped_4.wav</p>
-      <audio controls>
-        <source src="samples/index_level_invariance_only_2/swapped_4.wav" type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </li>
-  </ul>
+  <section aria-label="Index Level Invariance Only (Swapped Nb: 2)">
+    <h2>Index Level Invariance Only (Swapped Nb: 2)</h2>
+    <ul id="audioList"></ul>
+  </section>
+
+  <script>
+    // Define your audio files here
+    const index_level_invariance_only_2 = [
+      { name: "ori_4.wav", path: "samples/index_level_invariance_only_2/ori_4.wav" },
+      { name: "swapped_4.wav", path: "samples/index_level_invariance_only_2/swapped_4.wav" },
+      { name: "ori_209.wav", path: "samples/index_level_invariance_only_2/ori_209.wav" },
+      { name: "swapped_209.wav", path: "samples/index_level_invariance_only_2/swapped_209.wav" },
+      { name: "ori_329.wav", path: "samples/index_level_invariance_only_2/ori_329.wav" },
+      { name: "swapped_329.wav", path: "samples/index_level_invariance_only_2/swapped_329.wav" },
+      { name: "ori_634.wav", path: "samples/index_level_invariance_only_2/ori_634.wav" },
+      { name: "swapped_634.wav", path: "samples/index_level_invariance_only_2/swapped_634.wav" }
+    ];
+
+    const audioList = document.getElementById('audioList');
+
+    // Generate HTML for each audio file
+    samples.forEach(index_level_invariance_only_2 => {
+      audioList.innerHTML += `
+        <li>
+          <p>${sample.name}</p>
+          <audio controls>
+            <source src="${sample.path}" type="audio/wav">
+            <p class="error">Your browser does not support the audio element.</p>
+          </audio>
+        </li>
+      `;
+    });
+  </script>
+
+
+  <section aria-label="Index Level Invariance Only (Swapped Nb: 3)">
+    <h2>Index Level Invariance Only (Swapped Nb: 3)</h2>
+    <ul id="audioList"></ul>
+  </section>
+
+  <script>
+    // Define your audio files here
+    const index_level_invariance_only_3 = [
+      { name: "ori_73.wav", path: "samples/index_level_invariance_only_3/ori_73.wav" },
+      { name: "swapped_73.wav", path: "samples/index_level_invariance_only_3/swapped_73.wav" },
+      { name: "ori_101.wav", path: "samples/index_level_invariance_only_3/ori_101.wav" },
+      { name: "swapped_101.wav", path: "samples/index_level_invariance_only_3/swapped_101.wav" },
+      { name: "ori_250.wav", path: "samples/index_level_invariance_only_3/ori_250.wav" },
+      { name: "swapped_250.wav", path: "samples/index_level_invariance_only_2/swapped_250.wav" },
+      { name: "ori_618.wav", path: "samples/index_level_invariance_only_3/ori_618.wav" },
+      { name: "swapped_618.wav", path: "samples/index_level_invariance_only_3/swapped_618634.wav" }
+    ];
+
+    const audioList = document.getElementById('audioList');
+
+    // Generate HTML for each audio file
+    samples.forEach(index_level_invariance_only_3 => {
+      audioList.innerHTML += `
+        <li>
+          <p>${sample.name}</p>
+          <audio controls>
+            <source src="${sample.path}" type="audio/wav">
+            <p class="error">Your browser does not support the audio element.</p>
+          </audio>
+        </li>
+      `;
+    });
+  </script>
 </body>
 </html>
